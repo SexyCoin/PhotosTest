@@ -6,7 +6,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { NavigationContainer, StackActions, CommonActions  } from '@react-navigation/native';
 export default function(props)
 {
     return (

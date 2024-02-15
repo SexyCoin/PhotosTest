@@ -1,22 +1,14 @@
 import React, {useState} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
-  useColorScheme,
-  Image,
   View,
-  TouchableOpacity
 } from 'react-native';
 
-
-import { StackActions, CommonActions } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export default function(props)
 {
-    const [openDopMenu, setOpenDopMenu] = useState(false)
+    const Tab = createBottomTabNavigator();
     return (
         <View>
             <View

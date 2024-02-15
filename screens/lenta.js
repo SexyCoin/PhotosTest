@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Text, View, TouchableOpacity, ScrollView, StyleSheet, Dimensions, FlatList, ImageBackground, Image, TextInput} from 'react-native';
 import Layout from '../components/global/Layouts'
-import { makeObservable, action, observable } from 'mobx';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { dataPhotoStore } from '../components/store/photoData';
 export default class Lenta extends React.Component{
     constructor(props){
         super(props)
@@ -92,9 +91,10 @@ export default class Lenta extends React.Component{
         }
         
     }
+    
     item(index){
         return(
-            <TouchableOpacity style={{marginBottom: 10,}} onPress={()=>this.state.navigation.navigate('CardPhoto', {dataPhoto: index})} key={index.id}>
+            <TouchableOpacity style={{marginBottom: 10,}} onPress={()=> {dataPhotoStore.addDataPhoto(index), this.state.navigation.navigate('CardPhoto')}}>
                 <Image style={this.state.collum == 1 ? {width: deviceWidth, height: 300, resizeMode: 'cover',} : {width: (deviceWidth-32)/2, height: 150, resizeMode: 'cover',}} source={{uri: index.url}}/>
             </TouchableOpacity>
         )
@@ -124,8 +124,7 @@ export default class Lenta extends React.Component{
                               onChangeText={(value) => this.setState({search: value})}
                               style={{width: '100%', color: '#000', fontSize: 24}}
                               onSubmitEditing = {() => this.onSubmitted()}
-                            />
-                        {/* <TextInput style={{ borderBlockColor: 1, borderColor: "#000", height: 20, color: '#000'}} value='fff'/> */}
+                        />
                     </View>
                     <View>
                         {
