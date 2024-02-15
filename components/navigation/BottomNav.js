@@ -5,7 +5,8 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import {StackActions} from '@react-navigation/native';
+
+import { NavigationContainer, StackActions, CommonActions  } from '@react-navigation/native';
 export default function(props)
 {
     return (
@@ -14,14 +15,14 @@ export default function(props)
                 height: 60,
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
-                backgroundColor: '#fff',
+                backgroundColor: '#f1f1f1',
                 alignItems: 'center',
                 borderTopLeftRadius: 16,
                 borderTopRightRadius: 16,
-                zIndex: 17,
+                zIndex: 1,
                 overflow: 'hidden',
                 elevation: 50,
-                shadowColor: '#000',    
+                shadowColor: '#000',  
             }}
         >
             <TouchableOpacity
@@ -30,7 +31,7 @@ export default function(props)
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
-                // onPress={props.token ? ()=>props.navigation.dispatch(StackActions.replace('Profile')) : ()=>props.navigation.navigate('Main')}  
+                onPress={()=>props.navigation.navigate('Lenta')}  
             >
                 <Text style={{color: '#444444', fontSize: 14,fontFamily: Platform.OS === 'android' ? 'poppins_medium' : 'Poppins-Medium'}}>Lenta</Text>
             </TouchableOpacity>
@@ -41,7 +42,7 @@ export default function(props)
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
-                // onPress={()=>props.navigation.navigate('Board',{id: props.id})}
+                onPress={()=>props.navigation.navigate('Profile')}
             >
                 <Text style={{color: '#444444', fontSize: 14, fontFamily: Platform.OS === 'android' ? 'poppins_medium' : 'Poppins-Medium'}}>Login</Text>
             </TouchableOpacity>

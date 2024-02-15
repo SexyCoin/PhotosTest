@@ -44,10 +44,7 @@ export default function(props)
                     <Text  style={{fontSize: 24, color: '#17093a', justifyContent: 'center', fontFamily: Platform.OS === 'android' ? 'poppins_bold' : 'Poppins-Bold', textAlign: 'center'}}>
                         PhotoTest 
                     </Text>
-                
-               
-                    {/* <View style={{flexDirection: 'row',width: 24, height: 24, }}> 
-                    </View>     */}
+            
             </View>
         </View>
     );

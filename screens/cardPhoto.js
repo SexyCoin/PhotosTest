@@ -17,7 +17,7 @@ export default class Lenta extends React.Component{
     
     item(index){
         return(
-            <TouchableOpacity style={{marginBottom: 10}}>
+            <TouchableOpacity style={{}}>
                 <Image style={{width: deviceWidth, height: 300, resizeMode: 'cover',}} source={{uri: index.url}}/>
             </TouchableOpacity>
         )
@@ -28,12 +28,12 @@ export default class Lenta extends React.Component{
 
         return(
             <Layout navigation={this.state.navigation}  title="Board" >
-                <ScrollView style={{paddingHorizontal: 16}}>
+                <ScrollView style={{paddingHorizontal: 16, marginBottom: 10}}>
                     <View>
                         <TouchableOpacity onPress={()=>this.setState({modalPhoto: true})}>
                             <Image style={{width: deviceWidth, height: deviceWidth, resizeMode: 'contain',}} source={{uri: this.state.dataPhoto.url}}/>
                         </TouchableOpacity>
-                        <Text style={{fontFamily: Platform.OS === 'android' ? 'poppins_bold' : 'Poppins-Bold', textAlign: 'center', fontSize: 24, color: "#000", marginTop: 10}}>{this.state.dataPhoto.title}</Text>
+                        <Text style={{fontFamily: Platform.OS === 'android' ? 'poppins_bold' : 'Poppins-Bold', textAlign: 'center', fontSize: 24, color: "#000",}}>{this.state.dataPhoto.title}</Text>
                         <Text style={{fontFamily: Platform.OS === 'android' ? 'poppins_regular' : 'Poppins-Regular', textAlign: 'center', fontSize: 20, color: "#000", marginTop: 10}}>{this.state.dataPhoto.description}</Text>
                         <Text style={{fontFamily: Platform.OS === 'android' ? 'poppins_regular' : 'Poppins-Regular', textAlign: 'center', fontSize: 16, color: "#000", marginTop: 10}}>User ID - {this.state.dataPhoto.user}</Text>
                         <Text style={{fontFamily: Platform.OS === 'android' ? 'poppins_regular' : 'Poppins-Regular', textAlign: 'center', fontSize: 16, color: "#000", marginTop: 10}}>Photo ID - {this.state.dataPhoto.id}</Text>
